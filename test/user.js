@@ -25,5 +25,12 @@ exports.user = {
             test.equal(res.message.username,process.env.TEST_USERNAME,"username does not match");
             test.done();
         });
+    },
+    "create user" : function(test) {
+        pt.userCreate({ username: "wtfbra", password: "fart",location: "bristol",email: "est@kroher.net" },function(err,result) {
+            console.log(err);
+            console.log(result);
+            test.done();
+        });
     }
 };
